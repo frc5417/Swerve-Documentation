@@ -108,7 +108,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#coming-soon" class="md-skip">
+        <a href="#software" class="md-skip">
           Skip to content
         </a>
       
@@ -327,9 +327,53 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Intro
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         Intro
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#swerve-drive-kinematics" class="md-nav__link">
+    Swerve drive kinematics
+  </a>
+  
+    <nav class="md-nav" aria-label="Swerve drive kinematics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-strafing-vector" class="md-nav__link">
+    The strafing vector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -506,6 +550,34 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#swerve-drive-kinematics" class="md-nav__link">
+    Swerve drive kinematics
+  </a>
+  
+    <nav class="md-nav" aria-label="Swerve drive kinematics">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-strafing-vector" class="md-nav__link">
+    The strafing vector
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -524,7 +596,37 @@
   </a>
 
 
-<h1 id="coming-soon">Coming Soon</h1>
+<h1 id="software">Software</h1>
+<p>Software is an essential part in a robot's success. From autonomous to tele-op, to kinematics and vision, good software is often a major factor in whether your bot performes well or not.</p>
+<h2 id="swerve-drive-kinematics">Swerve drive kinematics</h2>
+<p>It may seem complicated, but the workings of a swerve bot are relatively simple.
+Here are the concepts that we're assuming you understand already. If you don't, then
+please do some brief research.</p>
+<ul>
+<li>Vectors and vector math (addition + subtraction)</li>
+<li>Basics of forces (velocity and force)</li>
+<li>The premise behind a swerve bot</li>
+<li>Trigonometry (identities and formulas)</li>
+<li>How to take joystick values (direction and magnitude)</li>
+</ul>
+<p>The basis behind our kinematics is creating a velocity vector for each wheel. The vector
+points in the direction of the wheel and the size of the vector indicates the magnitude of
+the velocity. There are two vectors for each wheel that need to be combined: the strafing vector and the rotation vector. Throughout the code, we keep the vectors in component form for simplicity.</p>
+<h3 id="the-strafing-vector">The strafing vector</h3>
+<p>When we want to strafe, note that each wheel points in the same direction:</p>
+<p><strong><em>Add diagram of strafing wheels with their respective direction</em></strong></p>
+<p>Thus, the direction of each wheel just becomes whatever direction the joystick is facing. 
+It's so simple!</p>
+<p>Unfortunately, it's not that simple. This only works in robot-centric mode, where "left" and "right" directions are considered from the perspective of the robot. However, with swerve, you often are facing a different direction than the robot and so this becomes an uneccessary hussle.</p>
+<p><strong><em>Add diagram of the bot strafing left facing in two different directions (robot-centric)</em></strong></p>
+<p>The alternative is to use field-centric driving, which makes it so that "your left" is always the "bot's left", no matter which direction the robot is facing. To adjust for this, we need to get the angle from our gyroscope and adjust the strafing direction.</p>
+<p><strong><em>Add diagram of the bot strafing left facing in two different directions (field-centric)</em></strong></p>
+<p>Since we are keeping the vectors in component form, we need to think about this more carefully. Our joystick inputs give us inputs in the X and Y direction, and so we have 3</p>
+<p>$$
+Let ${J_{x}}$ be the magnitude of the X-direction of the left joystick.
+Let ${J_{y}}$ be the magnitude of the Y-direction of the left joystick.
+Let ${G}$ be the relative angle we are currently at. 
+$$</p>
 
 
   
