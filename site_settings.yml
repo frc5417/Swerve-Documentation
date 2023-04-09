@@ -1,7 +1,7 @@
 site_name: Custom Swerve Documentation - Eagle Robotics
 site_url: https://frc5417.github.io/Swerve-Documentation/
 repo_url: https://github.com/frc5417/CustomSwerve
-edit_uri: "https://github.com/frc5417/Swerve-Documentation/edit/master/docs" # No need to make changes here if you are using github
+edit_uri: "https://github.com/frc5417/Swerve-Documentation/edit/main/docs" # No need to make changes here if you are using github
 site_description: "Custom Swerve Documentation - Eagle Robotics"
 site_author: Krishna Shah, Joshua Vigel, Lucas Hatcher, Jeevan Vinoth
 dev_addr: 127.0.0.1:8011
@@ -17,3 +17,4 @@ nav:
     - "Intro": Electrical/Intro.md
   - "Strategy":
     - "Basics": Strategy/Basics.md  
+    - "Applications": Strategy/Applications.md

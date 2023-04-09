@@ -2,27 +2,32 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://frc5417.github.io/Swerve-Documentation/</loc>
-         <lastmod>2023-04-08</lastmod>
+         <lastmod>2023-04-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://frc5417.github.io/Swerve-Documentation/Electrical/Intro/</loc>
-         <lastmod>2023-04-08</lastmod>
+         <lastmod>2023-04-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://frc5417.github.io/Swerve-Documentation/Mechanical/Basics/</loc>
-         <lastmod>2023-04-08</lastmod>
+         <lastmod>2023-04-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://frc5417.github.io/Swerve-Documentation/Programming/Intro/</loc>
-         <lastmod>2023-04-08</lastmod>
+         <lastmod>2023-04-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://frc5417.github.io/Swerve-Documentation/Strategy/Intro/</loc>
-         <lastmod>2023-04-08</lastmod>
+         <loc>https://frc5417.github.io/Swerve-Documentation/README/</loc>
+         <lastmod>2023-04-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://frc5417.github.io/Swerve-Documentation/Strategy/Basics/</loc>
+         <lastmod>2023-04-09</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
