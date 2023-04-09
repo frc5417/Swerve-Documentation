@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://frc5417.github.io/Swerve-Documentation/Strategy/Applications/</loc>
+         <lastmod>2023-04-09</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://frc5417.github.io/Swerve-Documentation/Strategy/Basics/</loc>
          <lastmod>2023-04-09</lastmod>
          <changefreq>daily</changefreq>
