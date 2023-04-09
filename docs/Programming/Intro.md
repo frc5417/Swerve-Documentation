@@ -27,7 +27,7 @@ When we want to strafe, note that each wheel points in the same direction:
 Thus, the direction of each wheel just becomes whatever direction the joystick is facing. 
 It's so simple!
 
-Unfortunately, it's not that simple. This only works in robot-centric mode, where "left" and "right" directions are considered from the perspective of the robot. However, with swerve, you often are facing a different direction than the robot and so this becomes an uneccessary hussle.
+Unfortunately, it's not that simple. This only works in robot-centric mode, where "left" and "right" directions are considered from the perspective of the robot. However, with swerve, you often are facing a different direction than the robot and so this quickly becomes a greivance.
 
 ***Add diagram of the bot strafing left facing in two different directions (robot-centric)***
 
@@ -35,11 +35,25 @@ The alternative is to use field-centric driving, which makes it so that "your le
 
 ***Add diagram of the bot strafing left facing in two different directions (field-centric)***
 
-Since we are keeping the vectors in component form, we need to think about this more carefully. Our joystick inputs give us inputs in the X and Y direction, and so we have 3
+Thus, the vector of our strafing has an angle of our joystick minus the angle of our gyroscope. In component form, the strafing vector is (The strafing vector is S):
 
 $$
-Let ${J_{x}}$ be the magnitude of the X-direction of the left joystick.
-Let ${J_{y}}$ be the magnitude of the Y-direction of the left joystick.
-Let ${G}$ be the relative angle we are currently at. 
+    S_{x} = cos(joystickAngle - gyro)
 $$
+$$
+    S_{y} = sin(joystickAngle - gyro)
+$$
+
+Using our subtraction identities, we can derive the following equations for our code.
+
+$$
+    S_{x} = (cos(joystickAngle) * cos(gryo)) - (sin(joystickAngle) * sin(gyro)) 
+          = (joyStick_x * cos(gyro)) - (joyStick_y * sin(gyro))
+$$
+$$
+    S_{y} = (cos(joystickAngle) * sin(gyro)) + (sin(joystickAngle) * cos(gyro))
+          = (joyStick_x * sin(gyro)) +  (joyStick_y * cos(gyro))
+$$
+
+where `joystickX` and `joystickY` are the X and Y magnitudes of our joystick respectively.
 
