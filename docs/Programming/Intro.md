@@ -6,7 +6,7 @@ Software is an essential part in a robot's success. From autonomous to tele-op, 
 
 It may seem complicated, but the workings of a swerve bot are relatively simple.
 Here are the concepts that we're assuming you understand already. If you don't, then
-please do some brief research.
+please take some time to do some brief research.
 
 * Vectors and vector math (addition + subtraction)
 * Basics of forces (velocity and force)
@@ -40,6 +40,7 @@ Thus, the vector of our strafing has an angle of our joystick minus the angle of
 $$
     S_{x} = cos(joystickAngle - gyro)
 $$
+
 $$
     S_{y} = sin(joystickAngle - gyro)
 $$
@@ -50,10 +51,41 @@ $$
     S_{x} = (cos(joystickAngle) * cos(gryo)) - (sin(joystickAngle) * sin(gyro)) 
           = (joyStick_x * cos(gyro)) - (joyStick_y * sin(gyro))
 $$
+
 $$
     S_{y} = (cos(joystickAngle) * sin(gyro)) + (sin(joystickAngle) * cos(gyro))
           = (joyStick_x * sin(gyro)) +  (joyStick_y * cos(gyro))
 $$
 
 where `joystickX` and `joystickY` are the X and Y magnitudes of our joystick respectively.
+
+Of course, this is all in units from 0-1 (or rather, unitless). This can be given directly to the motor speeds, or if you need the values in terms of m/s, you can multiply the vector by your maximum velocity.
+
+### The Rotation Vector
+
+A swerve drive can rotate, strafe, or do both at the same time! in order to handle rotation, we need one more vector. Thankfully, this one is takes much less work to compute than the previuos vector.
+
+***Add diagram of roation vectors on each wheel***
+
+The direction of the rotation vectors doesn't change, rather the but rather the magnitude. The magnitude is determined by the Right Joysticks y value (r_joy_y). We can say that for each wheel,
+
+$$
+R_{1} = [ rJoyy, π/4 ]
+$$
+
+$$
+R_{2} = [ rJoyy, 7π/4 ]
+$$
+
+$$
+R_{3} = [ rJoyy, 5π/4 ]
+$$
+
+$$
+R_{4} = [ rJoyy, 3π/4 ]
+$$
+
+### Conclusion
+
+We now have our rotation and strafing vectors. All that's left for us to do is convert each one to component form and add them together to form the final velocity vector for each wheel.
 
