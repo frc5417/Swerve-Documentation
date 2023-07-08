@@ -1,4 +1,8 @@
 site_name: Custom Swerve Documentation - Eagle Robotics
+extra_javascript: 
+    - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
+markdown_extensions:
+    - mdx_math
 site_url: https://frc5417.github.io/Swerve-Documentation/
 repo_url: https://github.com/frc5417/CustomSwerve
 edit_uri: "https://github.com/frc5417/Swerve-Documentation/edit/main/docs" # No need to make changes here if you are using github
